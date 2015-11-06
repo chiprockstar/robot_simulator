@@ -78,9 +78,7 @@ class Simulator
   def evaluate(robot, commands)
     cmd_arr = instructions(commands)
     cmd_arr.each do |command|
-      robot.turn_right if command == :turn_right
-      robot.turn_left  if command == :turn_left
-      robot.advance    if command == :advance
+      robot.send(command)
     end
   end
 end
